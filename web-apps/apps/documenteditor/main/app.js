@@ -34276,7 +34276,7 @@ Common.Controllers = Common.Controllers || {}, define('common/main/lib/controlle
 });
 var reqerr;
 require.config({
-  baseUrl: 'https://determined-easley-10afef.netlify.app/web-apps/',
+  baseUrl: 'https://determined-easley-10afef.netlify.app/web-apps/apps/',
   paths: {
     jquery: '../vendor/jquery/jquery',
     underscore: '../vendor/underscore/underscore',
