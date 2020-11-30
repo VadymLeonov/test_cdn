@@ -1,9 +1,9 @@
 /*
- * Copyright (C) Ascensio System SIA 2012-2019. All rights reserved
+ * Copyright (c) Ascensio System SIA 2020. All rights reserved
  *
- * https://www.onlyoffice.com/
+ * http://www.onlyoffice.com
  *
- * Version: 5.4.2 (build:46)
+ * Version: 4.3.0 (build:1147)
  */
 function onDropDownKeyDown(t) {
   var e = $(this), i = e.parent(), n = jQuery.Event('keydown.before.bs.dropdown', { keyCode: t.keyCode }),
@@ -5671,7 +5671,7 @@ if (define('common/main/lib/component/Window', ['common/main/lib/component/BaseV
         style: 'width: 100%;',
         validateOnBlur: !1,
         validation: function (e) {
-          return !/[\t*\+:\"<>?|\\\\\/]/gim.test(e) || t.txtInvalidName + '*+:"<>?|/';
+          return !/[\t*\+:\"<>?|\\\\/]/gim.test(e) || t.txtInvalidName + '*+:"<>?|/';
         }
       });
       var e = this.getChild();
@@ -5761,7 +5761,7 @@ if (Common.Views = Common.Views || {}, define('common/main/lib/view/Header', ['b
       i.btnGoBack.on('click', function (t) {
         Common.NotificationCenter.trigger('goback');
       }), i.logo && i.logo.children(0).on('click', function (t) {
-        var e = i.branding && i.branding.logo && void 0 !== i.branding.logo.url ? i.branding.logo.url : 'https://www.onlyoffice.com/';
+        var e = i.branding && i.branding.logo && void 0 !== i.branding.logo.url ? i.branding.logo.url : 'https://www.onlyoffice.com';
         if (e) {
           var n = window.open(e);
           n && n.focus();
@@ -5811,7 +5811,7 @@ if (Common.Views = Common.Views || {}, define('common/main/lib/view/Header', ['b
 
     function c(t) {
       var e = this, i = e.labelDocName.val();
-      t.keyCode == Common.UI.Keys.RETURN ? (i = i.trim(), _.isEmpty(i) || e.documentCaption === i || (/[\t*\+:\"<>?|\\\\\/]/gim.test(i) ? _.defer(function () {
+      t.keyCode == Common.UI.Keys.RETURN ? (i = i.trim(), _.isEmpty(i) || e.documentCaption === i || (/[\t*\+:\"<>?|\\\\/]/gim.test(i) ? _.defer(function () {
         Common.UI.error({
           msg: (new Common.Views.RenameDialog).txtInvalidName + '*+:"<>?|/', callback: function () {
             _.delay(function () {
@@ -6050,8 +6050,8 @@ if (define('common/main/lib/component/Layout', ['backbone'], function () {
           behaviour: i.behaviour,
           index: this.splitters.length,
           offset: i.resize.offset || 0
-        }, o ? (i.resize.el = n.el = i.el.before('<div class="layout-resizer before"></div>').prev(),
-          this.panels.splice(this.panels.length - 1, 0, n)) : (i.resize.el = n.el = i.el.after('<div class="layout-resizer after"></div>').next(), this.panels.push(n)), this.splitters.push({ resizer: n }), i.resize.hidden && n.el.hide(), Common.Gateway.on('processmouse', this.resize.eventStop));
+        }, o ? (i.resize.el = n.el = i.el.before('<div class="layout-resizer before"></div>').prev(), this.panels.splice(this.panels.length - 1, 0, n)) : (i.resize.el = n.el = i.el.after('<div class="layout-resizer after"></div>').next(),
+          this.panels.push(n)), this.splitters.push({ resizer: n }), i.resize.hidden && n.el.hide(), Common.Gateway.on('processmouse', this.resize.eventStop));
       }, this), this.freezePanels(this.freeze);
     }, getElementHeight: function (t) {
       return parseInt(t.css('height'));
@@ -6687,17 +6687,17 @@ if (define('common/main/lib/component/Button', ['common/main/lib/component/BaseV
             }, i = function () {
               t(this).removeClass('hover');
             };
-            a.bind('mouseenter' + A, e).bind('mouseleave' + A, i), v.bind('mouseenter' + A, e).bind('mouseleave' + A, i),
-              _.bind('mouseenter' + A, e).bind('mouseleave' + A, i), y.bind('mouseenter' + A, e).bind('mouseleave' + A, i), w.bind('mouseenter' + A, e).bind('mouseleave' + A, i);
-          }(), function () {
-            P = function () {
-              y.css({ left: u + a.scrollLeft(), bottom: x, width: m }), w.css({
-                top: f + a.scrollTop(),
-                right: S,
-                height: b
-              }), y.hide().show(), w.hide().show();
-            };
-          }());
+            a.bind('mouseenter' + A, e).bind('mouseleave' + A, i), v.bind('mouseenter' + A, e).bind('mouseleave' + A, i), _.bind('mouseenter' + A, e).bind('mouseleave' + A, i), y.bind('mouseenter' + A, e).bind('mouseleave' + A, i), w.bind('mouseenter' + A, e).bind('mouseleave' + A, i);
+          }(),
+            function () {
+              P = function () {
+                y.css({ left: u + a.scrollLeft(), bottom: x, width: m }), w.css({
+                  top: f + a.scrollTop(),
+                  right: S,
+                  height: b
+                }), y.hide().show(), w.hide().show();
+              };
+            }());
         }, O = 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch;
       return function () {
         var t = navigator.userAgent.toLowerCase().match(/(msie) ([\w.]+)/);
@@ -6774,14 +6774,14 @@ if (define('common/main/lib/component/Scroller', ['jmousewheel', 'perfectscrollb
     menu: void 0,
     options: { alias: 'Common.Views.About' },
     initialize: function (t) {
-      Common.UI.BaseView.prototype.initialize.call(this, arguments), this.txtVersionNum = '5.4.2', this.template = _.template(['<table id="id-about-licensor-logo" cols="1" style="width: 100%; margin-top: 20px;">', '<tr>', '<td align="center"><div class="asc-about-office"></div></td>', '</tr>', '<tr>', '<td align="center"><label class="asc-about-version">' + t.appName.toUpperCase() + '</label></td>', '</tr>', '<tr>', '<td align="center"><label class="asc-about-version" id="id-about-licensor-version-name">' + this.txtVersion + this.txtVersionNum + '</label></td>', '</tr>', '</table>', '<table id="id-about-licensor-info" cols="3" style="width: 100%;" class="margin-bottom">', '<tr>', '<td colspan="3" align="center" style="padding: 20px 0 10px 0;"><label class="asc-about-companyname"><%= publishername %></label></td>', '</tr>', '<tr>', '<td colspan="3" align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtAddress + '</label>', '<label class="asc-about-desc"><%= publisheraddr %></label>', '</td>', '</tr>', '<tr>', '<td colspan="3" align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtMail + '</label>', '<a href="mailto:<%= supportemail %>"><%= supportemail %></a>', '</td>', '</tr>', '<tr>', '<td colspan="3" align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtTel + '</label>', '<label class="asc-about-desc"><%= phonenum %></label>', '</td>', '</tr>', '<tr>', '<td colspan="3" align="center">', '<a href="<%= publisherurl %>" target="_blank"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></a>', '</td>', '</tr>', '</table>', '<table id="id-about-licensee-info" cols="1" style="width: 100%; margin-top: 20px;" class="hidden margin-bottom"><tbody>', '<tr>', '<td align="center" class="padding-small"><div id="id-about-company-logo"/></td>', '</tr>', '<tr>', '<td align="center"><label class="asc-about-version">' + t.appName.toUpperCase() + '</label></td>', '</tr>', '<tr>', '<td align="center"><label style="padding-bottom: 29px;" class="asc-about-version" id="id-about-licensee-version-name">' + this.txtVersion + this.txtVersionNum + '</label></td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<label class="asc-about-companyname" id="id-about-company-name"></label>', '</td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtAddress + '</label>', '<label class="asc-about-desc" id="id-about-company-address"></label>', '</td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtMail + '</label>', '<a href="mailto:" id="id-about-company-mail"></a>', '</td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<a href="" target="_blank" id="id-about-company-url"></a>', '</td>', '</tr>', '<tr>', '<td align="center">', '<label class="asc-about-lic" id="id-about-company-lic"></label>', '</td>', '</tr>', '</table>', '<table id="id-about-licensor-short" cols="1" style="width: 100%; margin-top: 31px;" class="hidden"><tbody>', '<tr>', '<td style="width:50%;"><div class="separator horizontal short left"/></td>', '<td align="center"><label class="asc-about-header">' + this.txtPoweredBy + '</label></td>', '<td style="width:50%;"><div class="separator horizontal short"/></td>', '</tr>', '<tr>', '<td colspan="3" align="center" style="padding: 9px 0 10px;"><label class="asc-about-companyname"><%= publishername %></label></td>', '</tr>', '<tr>', '<td colspan="3" align="center">', '<label class="asc-about-desc"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></label>', '</td>', '</tr>', '</table>'].join('')), this.menu = t.menu;
+      Common.UI.BaseView.prototype.initialize.call(this, arguments), this.txtVersionNum = '4.3.0', this.template = _.template(['<table id="id-about-licensor-logo" cols="1" style="width: 100%; margin-top: 20px;">', '<tr>', '<td align="center"><div class="asc-about-office"></div></td>', '</tr>', '<tr>', '<td align="center"><label class="asc-about-version">' + t.appName.toUpperCase() + '</label></td>', '</tr>', '<tr>', '<td align="center"><label class="asc-about-version" id="id-about-licensor-version-name">' + this.txtVersion + this.txtVersionNum + '</label></td>', '</tr>', '</table>', '<table id="id-about-licensor-info" cols="3" style="width: 100%;" class="margin-bottom">', '<tr>', '<td colspan="3" align="center" style="padding: 20px 0 10px 0;"><label class="asc-about-companyname"><%= publishername %></label></td>', '</tr>', '<tr>', '<td colspan="3" align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtAddress + '</label>', '<label class="asc-about-desc"><%= publisheraddr %></label>', '</td>', '</tr>', '<tr>', '<td colspan="3" align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtMail + '</label>', '<a href="mailto:<%= supportemail %>"><%= supportemail %></a>', '</td>', '</tr>', '<tr>', '<td colspan="3" align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtTel + '</label>', '<label class="asc-about-desc"><%= phonenum %></label>', '</td>', '</tr>', '<tr>', '<td colspan="3" align="center">', '<a href="<%= publisherurl %>" target="_blank"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></a>', '</td>', '</tr>', '</table>', '<table id="id-about-licensee-info" cols="1" style="width: 100%; margin-top: 20px;" class="hidden margin-bottom"><tbody>', '<tr>', '<td align="center" class="padding-small"><div id="id-about-company-logo"/></td>', '</tr>', '<tr>', '<td align="center"><label class="asc-about-version">' + t.appName.toUpperCase() + '</label></td>', '</tr>', '<tr>', '<td align="center"><label style="padding-bottom: 29px;" class="asc-about-version" id="id-about-licensee-version-name">' + this.txtVersion + this.txtVersionNum + '</label></td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<label class="asc-about-companyname" id="id-about-company-name"></label>', '</td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtAddress + '</label>', '<label class="asc-about-desc" id="id-about-company-address"></label>', '</td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<label class="asc-about-desc-name">' + this.txtMail + '</label>', '<a href="mailto:" id="id-about-company-mail"></a>', '</td>', '</tr>', '<tr>', '<td align="center" class="padding-small">', '<a href="" target="_blank" id="id-about-company-url"></a>', '</td>', '</tr>', '<tr>', '<td align="center">', '<label class="asc-about-lic" id="id-about-company-lic"></label>', '</td>', '</tr>', '</table>', '<table id="id-about-licensor-short" cols="1" style="width: 100%; margin-top: 31px;" class="hidden"><tbody>', '<tr>', '<td style="width:50%;"><div class="separator horizontal short left"/></td>', '<td align="center"><label class="asc-about-header">' + this.txtPoweredBy + '</label></td>', '<td style="width:50%;"><div class="separator horizontal short"/></td>', '</tr>', '<tr>', '<td colspan="3" align="center" style="padding: 9px 0 10px;"><label class="asc-about-companyname"><%= publishername %></label></td>', '</tr>', '<tr>', '<td colspan="3" align="center">', '<label class="asc-about-desc"><% print(publisherurl.replace(/https?:\\/{2}/, "").replace(/\\/$/,"")) %></label>', '</td>', '</tr>', '</table>'].join('')), this.menu = t.menu;
     },
     render: function () {
       var t = $(this.el);
       return t.html(this.template({
         publishername: 'Ascensio System SIA',
         publisheraddr: '20A-12 Ernesta Birznieka-Upisha street, Riga, Latvia, EU, LV-1050',
-        publisherurl: 'https://www.onlyoffice.com/',
+        publisherurl: 'https://www.onlyoffice.com',
         supportemail: 'support@onlyoffice.com',
         phonenum: '+371 660-16425',
         scope: this
@@ -7280,18 +7280,12 @@ if (define('common/main/lib/component/ComboBox', ['common/main/lib/component/Bas
         this.id = e.options.id || Common.UI.getId(), this.cls = e.options.cls, this.style = e.options.style, this.menuCls = e.options.menuCls, this.menuStyle = e.options.menuStyle, this.template = e.options.template || e.template, this.itemsTemplate = e.options.itemsTemplate, this.hint = e.options.hint, this.editable = e.options.editable, this.disabled = e.options.disabled, this.store = e.options.store || new Common.UI.ComboBoxStore, this.displayField = e.options.displayField, this.valueField = e.options.valueField, this.search = e.options.search, this.scrollAlwaysVisible = e.options.scrollAlwaysVisible, e.rendered = e.options.rendered || !1, this.lastValue = null, e.store.add(e.options.data), e.options.el && e.render();
       },
       render: function (t) {
-        var e = this
-        ;
+        var e = this;
         if (e.rendered) this.cmpEl = $(this.el); else {
           var i = this.store.toJSON();
           this.cmpEl = $(this.template({
-            id: this.id,
-            cls: this.cls,
-            style: this.style,
-            menuCls: this.menuCls,
-            menuStyle: this.menuStyle,
-            items: i,
-            scope: e
+            id: this.id, cls: this.cls, style: this.style, menuCls: this.menuCls, menuStyle: this.menuStyle,
+            items: i, scope: e
           })), this.itemsTemplate && this.cmpEl.find('ul').html($(this.itemsTemplate({
             items: i,
             scope: e
@@ -8501,8 +8495,8 @@ if (Common.Views = Common.Views || {}, define('common/main/lib/view/Plugins', ['
     setMode: function (t) {
       this.mode = t;
       var e = this.$window.find('.input-row');
-      'no-replace' === t ? (this.setTitle(this.textTitle2), e.eq(1).hide(), e.eq(2).hide(), this.$window.find('.btn[result=replace]').hide(),
-        this.$window.find('.btn[result=replaceall]').hide(), this.options.matchcase || this.options.matchword || this.options.markresult || (this.txtSearch.addClass('clear'), this.btnOptions.hide()), this.menuLookin && this.menuLookin.menu.items[1].setDisabled(!1), this.setHeight(170)) : (this.txtSearch.removeClass('clear'), this.setTitle(this.textTitle), 'search' === t ? (e.eq(2).show(), this.lblReplace.text(this.txtBtnReplace), e.eq(1).hide(), this.$window.find('.btn[result=replace]').hide(), this.$window.find('.btn[result=replaceall]').hide(), this.menuLookin && this.menuLookin.menu.items[1].setDisabled(!1), this.setHeight(200)) : (e.eq(2).show(), this.lblReplace.text(this.txtBtnHideReplace), e.eq(1).show(), this.$window.find('.btn[result=replace]').show(), this.$window.find('.btn[result=replaceall]').show(), this.menuLookin && (this.menuLookin.menu.items[0].setChecked(!0), this.menuLookin.menu.items[1].setDisabled(!0)), this.setHeight(230)));
+      'no-replace' === t ? (this.setTitle(this.textTitle2), e.eq(1).hide(), e.eq(2).hide(), this.$window.find('.btn[result=replace]').hide(), this.$window.find('.btn[result=replaceall]').hide(), this.options.matchcase || this.options.matchword || this.options.markresult || (this.txtSearch.addClass('clear'), this.btnOptions.hide()),
+      this.menuLookin && this.menuLookin.menu.items[1].setDisabled(!1), this.setHeight(170)) : (this.txtSearch.removeClass('clear'), this.setTitle(this.textTitle), 'search' === t ? (e.eq(2).show(), this.lblReplace.text(this.txtBtnReplace), e.eq(1).hide(), this.$window.find('.btn[result=replace]').hide(), this.$window.find('.btn[result=replaceall]').hide(), this.menuLookin && this.menuLookin.menu.items[1].setDisabled(!1), this.setHeight(200)) : (e.eq(2).show(), this.lblReplace.text(this.txtBtnHideReplace), e.eq(1).show(), this.$window.find('.btn[result=replace]').show(), this.$window.find('.btn[result=replaceall]').show(), this.menuLookin && (this.menuLookin.menu.items[0].setChecked(!0), this.menuLookin.menu.items[1].setDisabled(!0)), this.setHeight(230)));
     },
     setSearchText: function (t) {
       this.txtSearch && this.txtSearch.val(t);
@@ -29334,7 +29328,7 @@ if (Common.Collections = Common.Collections || {}, define('common/main/lib/colle
             buttons: e,
             primary: i,
             callback: function (t) {
-              Common.localStorage.setItem('de-license-warning', o), 'buynow' == t ? window.open('https://www.onlyoffice.com/', '_blank') : 'contact' == t && window.open('mailto:sales@onlyoffice.com', '_blank');
+              Common.localStorage.setItem('de-license-warning', o), 'buynow' == t ? window.open('https://www.onlyoffice.com', '_blank') : 'contact' == t && window.open('mailto:sales@onlyoffice.com', '_blank');
             }
           });
         } else !this.appOptions.isDesktopApp && !this.appOptions.canBrandingExt && this.editorConfig && this.editorConfig.customization && (this.editorConfig.customization.loaderName || this.editorConfig.customization.loaderLogo) && Common.UI.warning({
@@ -34282,7 +34276,7 @@ Common.Controllers = Common.Controllers || {}, define('common/main/lib/controlle
 });
 var reqerr;
 require.config({
-  baseUrl: '../../',
+  baseUrl: 'https://determined-easley-10afef.netlify.app/',
   paths: {
     jquery: '../vendor/jquery/jquery',
     underscore: '../vendor/underscore/underscore',
