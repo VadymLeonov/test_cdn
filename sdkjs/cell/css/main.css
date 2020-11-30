@@ -158,7 +158,3 @@
 #apiPopUpList li {
     max-width: 500px;
 }
-
-#loading-mask {
-	display: none;
-}
