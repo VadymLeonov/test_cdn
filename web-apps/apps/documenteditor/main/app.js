@@ -5129,7 +5129,7 @@ if (Common.Locale = new function () {
     return null == i ? '' : decodeURIComponent(i[1].replace(/\+/g, ' '));
   }, _requireLang = function () {
     var t = (_getUrlParameterByName('lang') || 'en').split(/[\-_]/)[0];
-    currentLang = t, fetch('https://determined-easley-10afef.netlify.app/web-apps/apps/documenteditor/main/locale/' + t + '.json').then(function (e) {
+    currentLang = t, fetch('locale/' + t + '.json').then(function (e) {
       if (!e.ok) {
         if (currentLang = 'en', 'en' != t) return fetch('locale/en.json');
         throw new Error('server error');
@@ -37524,7 +37524,7 @@ require.config({
       '../../sdkjs/word/sdk-all-min',
     ],
     api: 'api/documents/api',
-    // api:k [
+    // api: [
     //   'https://determined-easley-10afef.netlify.app/web-apps/apps/api/documents/api',
     //   'api/documents/api',
     // ],
