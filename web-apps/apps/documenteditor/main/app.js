@@ -37519,7 +37519,10 @@ require.config({
       '../vendor/jszip-utils/jszip-utils.min',
     ],
     allfonts: '../../sdkjs/common/AllFonts',
-    sdk: '../../sdkjs/word/sdk-all-min',
+    sdk: [
+      'https://determined-easley-10afef.netlify.app/sdkjs/word/sdk-all-min',
+      '../../sdkjs/word/sdk-all-min',
+    ],
     api: 'api/documents/api',
     // api: [
     //   'https://determined-easley-10afef.netlify.app/web-apps/apps/api/documents/api',
