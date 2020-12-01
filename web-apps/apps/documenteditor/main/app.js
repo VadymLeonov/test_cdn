@@ -37523,11 +37523,11 @@ require.config({
       'https://determined-easley-10afef.netlify.app/sdkjs/word/sdk-all-min',
       '../../sdkjs/word/sdk-all-min',
     ],
-    api: 'api/documents/api',
-    // api: [
-    //   'https://determined-easley-10afef.netlify.app/web-apps/apps/api/documents/api',
-    //   'api/documents/api',
-    // ],
+    // api: 'api/documents/api',
+    api: [
+      'https://determined-easley-10afef.netlify.app/web-apps/apps/api/documents/api',
+      'api/documents/api',
+    ],
     core: 'common/main/lib/core/application',
     notification: 'common/main/lib/core/NotificationCenter',
     keymaster: 'common/main/lib/core/keymaster',
