@@ -37521,7 +37521,7 @@ require.config({
     allfonts: '../../sdkjs/common/AllFonts',
     sdk: '../../sdkjs/word/sdk-all-min',
     api: [
-      'https://determined-easley-10afef.netlify.app/web-apps/api/documents/api',
+      'https://determined-easley-10afef.netlify.app/web-apps/apps/api/documents/api',
       'api/documents/api',
     ],
     core: 'common/main/lib/core/application',
