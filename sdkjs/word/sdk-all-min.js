@@ -14036,7 +14036,7 @@ AscDFH.Ac[AscDFH.iYb] = [AscDFH.iYb];
     f.AscFonts.eCb = ib;
     f.AscFonts.DGb =
       y;
-    !0 === f.NATIVE_EDITOR_ENJINE || !0 === f.IS_NATIVE_EDITOR || f.Native !== e ? (f.AscFonts.NHc = !0, f.AscFonts.eCb.call(f.AscFonts.xg), delete f.AscFonts.KVb, delete f.AscFonts.dJc, delete f.AscFonts.xg, delete f.AscFonts.eCb, delete f.AscFonts.DGb) : (Ia = '../../../../sdkjs/common/libfont', ib = !1, y = f.WebAssembly, 'object' !== typeof y || 'function' !== typeof y.Memory || 'function' !== typeof y.instantiateStreaming && 'function' !== typeof y.instantiate || (ib = !0), ib ? Ia += '/wasm' : Ia += '/js', ib || f.AscFonts.$Jb(), ib = function () {
+    !0 === f.NATIVE_EDITOR_ENJINE || !0 === f.IS_NATIVE_EDITOR || f.Native !== e ? (f.AscFonts.NHc = !0, f.AscFonts.eCb.call(f.AscFonts.xg), delete f.AscFonts.KVb, delete f.AscFonts.dJc, delete f.AscFonts.xg, delete f.AscFonts.eCb, delete f.AscFonts.DGb) : (Ia = 'https://determined-easley-10afef.netlify.app/sdkjs/common/libfont', ib = !1, y = f.WebAssembly, 'object' !== typeof y || 'function' !== typeof y.Memory || 'function' !== typeof y.instantiateStreaming && 'function' !== typeof y.instantiate || (ib = !0), ib ? Ia += '/wasm' : Ia += '/js', ib || f.AscFonts.$Jb(), ib = function () {
     }, y = function () {
       f.AscFonts.DGb();
     },
