@@ -37518,7 +37518,10 @@ require.config({
       'https://determined-easley-10afef.netlify.app/web-apps/vendor/jszip-utils/jszip-utils.min',
       '../vendor/jszip-utils/jszip-utils.min',
     ],
-    allfonts: '../../sdkjs/common/AllFonts',
+    allfonts: [
+      'https://determined-easley-10afef.netlify.app/sdkjs/common/AllFonts',
+      '../../sdkjs/common/AllFonts',
+    ],
     sdk: [
       'https://determined-easley-10afef.netlify.app/sdkjs/word/sdk-all-min',
       '../../sdkjs/word/sdk-all-min',
