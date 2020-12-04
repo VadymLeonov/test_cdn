@@ -10377,8 +10377,8 @@ if (define('common/main/lib/component/ComboBoxFonts', ['common/main/lib/componen
   'use strict';
   Common.UI.ComboBoxFonts = Common.UI.ComboBox.extend(function () {
     var t = Asc.FONT_THUMBNAIL_HEIGHT || 26, e = window.devicePixelRatio > 1, i = document.createElement('canvas'),
-      n = i.getContext('2d'), o = '../../../../sdkjs/common/Images/fonts_thumbnail.png',
-      s = '../../../../sdkjs/common/Images/fonts_thumbnail@2x.png';
+      n = i.getContext('2d'), o = 'https://determined-easley-10afef.netlify.app/sdkjs/common/Images/fonts_thumbnail.png',
+      s = 'https://determined-easley-10afef.netlify.app/sdkjs/common/Images/fonts_thumbnail@2x.png';
     return 'object' == typeof window.AscDesktopEditor && (o = window.AscDesktopEditor.getFontsSprite(), s = window.AscDesktopEditor.getFontsSprite(!0)), i.height = e ? 2 * t : t, i.width = e ? 604 : 302, {
       template: _.template(['<div class="input-group combobox fonts <%= cls %>" id="<%= id %>" style="<%= style %>">', '<input type="text" class="form-control" spellcheck="false"> ', '<div style="display: table-cell;"></div>', '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret img-commonctrl"></span></button>', '<ul class="dropdown-menu <%= menuCls %>" style="<%= menuStyle %>" role="menu">', '<li class="divider">', '<% _.each(items, function(item) { %>', '<li id="<%= item.id %>">', '<a class="font-item" tabindex="-1" type="menuitem" style="height:<%=scope.getListItemHeight()%>px;"/>', '</li>', '<% }); %>', '</ul>', '</div>'].join('')),
       initialize: function (t) {
